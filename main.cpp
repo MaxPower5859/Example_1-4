@@ -1,6 +1,7 @@
 #include "mbed.h"
 #include "arm_book_lib.h"
 
+//linea de peurba
 int main()
 {
     DigitalIn gasDetector(D2);
