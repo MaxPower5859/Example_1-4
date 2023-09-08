@@ -1,8 +1,17 @@
 #include "mbed.h"
 #include "arm_book_lib.h"
 
-//linea de peurba
-int main()
+//main de prueba
+int main(){
+
+    BusIn pines(D2,D3,D4,D5,D6,D7);
+    pines.mode(PullDown);
+    pines.operator[](D2);
+
+    PortOut salida( PortB, LED1);
+
+}
+/* int main()
 {
     DigitalIn gasDetector(D2);
     DigitalIn overTempDetector(D3);
@@ -36,4 +45,4 @@ int main()
             alarmState = OFF;
         }
     }
-}
+} */
