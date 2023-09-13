@@ -2,15 +2,32 @@
 #include "arm_book_lib.h"
 
 //main de prueba
-int main(){
+ int main(){
 
     BusIn pines(D2,D3,D4,D5,D6,D7);
     pines.mode(PullDown);
-    pines.operator[](D2);
+    //pines.operator[](D2);
 
     PortOut salida( PortB, LED1);
 
-}
+    salida = OFF;
+    bool alarmState = OFF;
+
+    
+    while (true) {
+
+        if ( pines.operator[](D2) || pines.operator[](D3)) {
+            alarmState = ON;
+        }
+
+        salida = alarmState;
+
+        if ( pines.operator[](D4) && pines.operator[](D5) && !pines.operator[](D6) && !pines.operator[](D7)) {
+            alarmState = OFF;
+        }
+    }
+
+} 
 /* int main()
 {
     DigitalIn gasDetector(D2);
