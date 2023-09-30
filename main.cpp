@@ -17,7 +17,7 @@
          /* BUS OUT
          Media parecida a bus in, la funcion salida.write(), escribe en la mascara de bits
          segun como la hayas definido en este caso seria LED3LED2LED1.
-         Luego agrege ese printF que me sirvio para debugger el codigo y lo deje.
+         Luego agrege ese printF que me sirvio para debugger el codigo.
         */
         if ( pines.read()  & 1 || (pines.read() >> 1) & 1 ) {
             salida.write(1);
